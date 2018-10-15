@@ -1,0 +1,12 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance = "outline"
+      color = 'accent' >
+      <input matInput  placeholder="Search By Regex" 
+            [formControl]="searchFormControl"
+             [errorStateMatcher]="matcher"
+             (input) = 'RegexChanged()' >
+      <mat-error *ngIf="searchFormControl.hasError('searchError')">
+        Please enter a valid search regex
+      </mat-error>
+    </mat-form-field>
+  </form>

@@ -1,0 +1,46 @@
+<div style="border:gray solid 2px;
+  border-radius: 1%;
+  margin: 2%;">
+  <mat-grid-list cols={{numberOfcolums}} rowHeight="2:1" gutterSize="10px">
+    <search-input style="margin-left: -10%;" (valueChange)='transferRegex($event)'></search-input>
+    <mat-grid-tile *ngFor="let user of users | filterRegexPip:regexFilter" [colspan]="colspan" [rowspan]="rowspan">
+      <mat-card class="mat-elevation-z0">
+        <img mat-card-image [src]="user.picture.medium">
+        <mat-card-content>
+          <p style="margin-left: -7%;
+               margin-right: -7%;background: gray;
+               text-align: left;
+               padding-left: 5%;
+               margin-top: -4%;">
+            {{user.name.first}} {{user.name.last}}
+            <span *ngIf='user.gender === "female"'>
+              <fa-icon [icon]="women"></fa-icon>
+            </span>
+            <span *ngIf='user.gender === "male"'>
+              <fa-icon [icon]="man"></fa-icon>
+            </span>
+            <br> {{user.email}}
+          </p>
+
+        </mat-card-content>
+      </mat-card>
+      <!-- <mat-card>
+          <img  mat-card-image [src]="user.picture.medium" />
+          <mat-card-content>
+              <p>
+                  {{user.name.first}} {{user.name.last}}
+              </p>
+            </mat-card-content>
+      </mat-card> -->
+
+      <!-- <div>
+      <img [src]="user.picture.medium" />
+      <div style="border: 2px solid gray; background: gray">
+        <span>{{user.name.first}} {{user.name.last}}</span> 
+      </div>
+    </div> -->
+    </mat-grid-tile>
+  </mat-grid-list>
+  <button mat-raised-button color="warn" style="width: 10%;
+    margin-left: 45%;margin-right: 45%; margin-bottom: 15%" (click)='Load()'>LOAD MORE</button>
+</div>

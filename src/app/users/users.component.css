@@ -1,0 +1,28 @@
+/* mat-grid-tile {
+border: 2px solid black;
+  } */
+  mat-grid-list {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5%;
+    margin-bottom: 1%
+     
+  }
+  .mat-card{
+    width: 100%;
+    height: 70%;
+  }
+  .mat-card-content{
+    height: 100%;
+  }
+  .mat-card-image{
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border-radius: 50%;
+    margin-top: -5%;
+  }
+  
